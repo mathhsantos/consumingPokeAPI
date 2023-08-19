@@ -6,6 +6,4 @@ export const PrincipalDiv = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  position: relative;
-  background: white url('/bg.png') bottom;
 `
