@@ -27,18 +27,20 @@ export default function Home() {
   }
 
   const handleEvent = (e: any) => {
-    if(e.keyCode === 13){
-      data(name.toLowerCase()).then(response => {
-        setPokemon({urlImage: response?.sprites?.front_default})
-      }).catch(response => console.log(response))
+    if (e.keyCode === 13) {
+      data(name.toLowerCase())
+        .then(response => {
+          setPokemon({ urlImage: response?.sprites?.front_default })
+        })
+        .catch(response => console.log(response))
     }
   }
 
   return (
     <PrincipalDiv>
       <DivPoke>
-        {pokemon ? <PokemonBox src={`${pokemon?.urlImage}`}/> : '' }
-        <MainInput 
+        {pokemon ? <PokemonBox src={`${pokemon?.urlImage}`} /> : ''}
+        <MainInput
           type="text"
           value={name}
           onChange={(e: any) => setName(e.target.value)}
@@ -46,6 +48,6 @@ export default function Home() {
         />
         <Pokedex />
       </DivPoke>
-    </PrincipalDiv> 
+    </PrincipalDiv>
   )
 }
